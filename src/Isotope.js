@@ -8,22 +8,25 @@
  */
 var View          = require('famous/core/View');
 var Surface       = require('famous/core/Surface');
+var ImageSurface       = require('famous/surfaces/ImageSurface');
 var Transform     = require('famous/core/Transform');
 var StateModifier = require('famous/modifiers/StateModifier');
 
 
 function Block(width, height, num, content) {
-    this.width = width;
-    this.height = height;
+    
+    var imageUrl = content.getAttribute('src') + '';
+    var domWidth = parseInt(getComputedStyle(content)['width']);
+    var domHeight = parseInt(getComputedStyle(content)['height']);
+
+    this.width = domWidth;
+    this.height = domHeight;
     this.id = num;
 
-    this.background = new Surface({
-        size: [width, height],
-        content: content.innerHTML,
+    this.background = new ImageSurface({
+        size: [domWidth, domHeight],
+        content: imageUrl,
         properties: {
-            color: 'white',
-            textAlign: 'center',
-            backgroundColor: 'black',
             border: '1px solid white'
         }
     })
@@ -85,7 +88,6 @@ if ('getComputedStyle' in window) {
   return styles;
 }
 //    this.computedWidth = parseInt(getComputedStyle(block)['width']);
-//    this.space = width - this.computedW
 
 
 /**

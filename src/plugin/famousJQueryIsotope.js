@@ -12,7 +12,7 @@ var StateModifier = require('famous/modifiers/StateModifier');
 
         var isotopes = [];
         this.each(function () {
-            var $children = $(this.children).detach(); //.css('visibility', 'hidden');
+            var $children = $(this.children).css('visibility', 'hidden');
             
             var isotopeOpts = {};
             isotopeOpts.items = $children;
@@ -47,6 +47,7 @@ var StateModifier = require('famous/modifiers/StateModifier');
             mainContext.add(this).add(positionModifier).add(stateModifier).add(isotope);
             
             isotopes.push(isotope);
+            $children.detach();
         });
 
         if (isotopes.length == 1) return isotopes[0];

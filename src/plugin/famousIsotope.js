@@ -55,14 +55,4 @@ IsotopePlugin.prototype.init = function (items) {
   return Isotope;
 };
 
-// FamousIsotope.GridLayout          = Isotope.GridLayout;
-// FamousIsotope.CoverflowLayout     = Isotope.CoverflowLayout;
-// FamousIsotope.SequentialLayout    = Isotope.SequentialLayout;
-// FamousIsotope.SingularOpacity     = Isotope.SingularOpacity;
-// FamousIsotope.SingularSlideIn     = Isotope.SingularSlideIn;
-// FamousIsotope.SingularSlideBehind = Isotope.SingularSlideBehind;
-// FamousIsotope.SingularParallax    = Isotope.SingularParallax;
-// FamousIsotope.SingularTwist       = Isotope.SingularTwist;
-// FamousIsotope.SingularSoftScale   = Isotope.SingularSoftScale;
-
 module.exports = FamousIsotope;
